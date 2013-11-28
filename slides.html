@@ -1,0 +1,1420 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<title>Groovy DevOps in the Cloud</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="themes/ribbon/styles/style.css">
+	<link rel="stylesheet" href="themes/ribbon/styles/print.css" media="print">
+	<!--
+		To apply styles to the certain slides
+		use slide ID to get needed elements
+		-->
+	<style>
+		#Cover h2 {
+			color:#FFF;
+			text-align:center;
+			font-size:70px;
+			}
+		#FitToWidth h2,
+		#FitToHeight h2 {
+			color:#FFF;
+			text-align:center;
+			}
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Groovy DevOps in the Cloud</h1>
+		<p>Andrey Adamovich, Luciano Fiandesio, Aestas/IT</p>
+	</header>
+	<div class="slide cover" id="Cover"><div>
+		<section>
+			<header>
+				<h2>Groovy DevOps in the Cloud</h2>
+			</header><img src="images/cover.png" />
+		</section>
+	</div></div>	
+	
+    
+    
+       
+    <div class="slide shout" id="1"><div>
+        <section>
+			<header>
+				<h2>About us</h2>
+			</header>    
+            
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="2"><div>
+        <section>
+			<header>
+				<h2>Luciano Fiandesio</h2>
+			</header>    
+            <ul> 
+ <li>Bio: Developer, speaker, author, kitchen hacker</li> 
+ <li>Company: Aestas/IT (<a href="http://aestasit.com">http://aestasit.com</a>)</li> 
+ <li>E-mail: <a href="mailto:luciano@aestasit.com">luciano@aestasit.com</a></li> 
+ <li>Linkedin: <a href="http://www.linkedin.com/in/lucianofiandesio">http://www.linkedin.com/in/lucianofiandesio</a></li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="3"><div>
+        <section>
+			<header>
+				<h2>Andrey Adamovich</h2>
+			</header>    
+            <ul> 
+ <li>Bio: Developer, coach, speaker, author</li> 
+ <li>Company: Aestas/IT (<a href="http://aestasit.com">http://aestasit.com</a>)</li> 
+ <li>E-mail: <a href="mailto:andrey@aestasit.com">andrey@aestasit.com</a></li> 
+ <li>Linkedin: <a href="http://www.linkedin.com/in/andreyadamovich">http://www.linkedin.com/in/andreyadamovich</a></li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="4"><div>
+        <section>
+			<header>
+				<h2>What's this presentation about?</h2>
+			</header>    
+            Our take on:
+<ul> 
+ <li>DevOps</li> 
+ <li>Software Provisioning</li> 
+ <li>Continuous Integration</li> 
+ <li>Continuous Delivery</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="5"><div>
+        <section>
+			<header>
+				<h2>Technologies</h2>
+			</header>    
+            <ul> 
+ <li>AWS - <a href="http://aws.amazon.com">http://aws.amazon.com</a></li> 
+ <li><abbr title="Groovy programming langauge">Groovy</abbr> - <a href="http://groovy.codehaus.org">http://groovy.codehaus.org</a></li> 
+ <li><abbr title="Gradle build tool">Gradle</abbr> - <a href="http://gradle.org">http://gradle.org</a></li> 
+ <li>Jenkins - <a href="http://jenkins-ci.org">http://jenkins-ci.org</a></li> 
+ <li>Puppet - <a href="http://puppetlabs.com">http://puppetlabs.com</a></li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide shout" id="6"><div>
+        <section>
+			<header>
+				<h2>Developers + Operations = ?</h2>
+			</header>    
+            
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="7"><div>
+        <section>
+			<header>
+				<h2>Silos</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/01_TRADITIONAL.png" alt="Silos" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide shout" id="8"><div>
+        <section>
+			<header>
+				<h2>Conflicts</h2>
+			</header>    
+            
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="9"><div>
+        <section>
+			<header>
+				<h2>Risk</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/15_TRADITIONAL.png" alt="Traditional" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="10"><div>
+        <section>
+			<header>
+				<h2>Agile</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/16_AGILE.png" alt="Agile" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="11"><div>
+        <section>
+			<header>
+				<h2>What is DevOps?</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/17_DEVOPS.png" alt="DevOps" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="12"><div>
+        <section>
+			<header>
+				<h2>Infrastructure as Code</h2>
+			</header>    
+            Automate the provisioning and maintenance of servers:
+<ul> 
+ <li>Build from source control</li> 
+ <li>Utilize Open Source tools</li> 
+ <li>Ensure testability</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="13"><div>
+        <section>
+			<header>
+				<h2>Configuration propagation</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/18_AUTOMATION.png" alt="Automation 1" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="14"><div>
+        <section>
+			<header>
+				<h2>Changes</h2>
+			</header>    
+            <p>No Manual Changes!</p>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="15"><div>
+        <section>
+			<header>
+				<h2>Building a DevOps toolkit</h2>
+			</header>    
+            <ul> 
+ <li>Automation is <strong>key</strong></li> 
+ <li>We are <abbr title="Java Virtual Machine">JVM</abbr> hackers</li> 
+ <li>Fragmented ecosystem</li> 
+ <li>Full-stack approach</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="16"><div>
+        <section>
+			<header>
+				<h2>Sshoogr</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/LOGO_SSHOOGR.png" alt="Sshoogr logo" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="17"><div>
+        <section>
+			<header>
+				<h2>Sshoogr Features</h2>
+			</header>    
+            <ul> 
+ <li>Remote command execution</li> 
+ <li>File uploading/downloading</li> 
+ <li>Tunneling</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="18"><div>
+        <section>
+			<header>
+				<h2>Sshoogr Example I</h2>
+			</header>    
+            <pre>
+<code>remoteSession {</code>
+<code>  url = 'user2:654321@localhost:2222'</code>
+<code>  exec 'rm -rf /tmp/*'</code>
+<code>  exec 'touch /var/lock/my.pid'</code>
+<code>  remoteFile('/var/my.conf').text = &quot;enabled=true&quot;</code>
+<code>}</code>
+</pre>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="19"><div>
+        <section>
+			<header>
+				<h2>Sshoogr Example II</h2>
+			</header>    
+            <pre>
+<code>remoteSession {</code>
+<code>  scp {</code>
+<code>    from { localDir &quot;$buildDir/application&quot; }</code>
+<code>    into { remoteDir '/var/bea/domain/application' }</code>
+<code>  }</code>
+<code>}</code>
+</pre>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="20"><div>
+        <section>
+			<header>
+				<h2>Sshoogr Example III</h2>
+			</header>    
+            <pre>
+<code>def result = exec(command: '/usr/bin/mycmd',</code>
+<code>  failOnError: false, showOutput: false)</code>
+<code>if (result.exitStatus == 1) {</code>
+<code>  result.output.eachLine { line -&gt;</code>
+<code>    if (line.contains('WARNING')) {</code>
+<code>      throw new RuntimeException(&quot;Warning!!!&quot;)</code>
+<code>    }</code>
+<code>  }</code>
+<code>}</code>
+</pre>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="21"><div>
+        <section>
+			<header>
+				<h2>Why Groovy?</h2>
+			</header>    
+            <ul> 
+ <li><abbr title="Groovy programming langauge">Groovy</abbr> is perfect choice for scripting</li> 
+ <li>Very mature, concise syntax</li> 
+ <li>Extremely easy to produce <abbr title="Domain Specific Langauge">DSL</abbr></li> 
+ <li>We wrote a book about it!</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="22"><div>
+        <section>
+			<header>
+				<h2>Shameless plug</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/BOOK_FRONT_COVER.png" alt="Book Cover" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide shout" id="23"><div>
+        <section>
+			<header>
+				<h2>Puppet</h2>
+			</header>    
+            
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="24"><div>
+        <section>
+			<header>
+				<h2>What is Puppet?</h2>
+			</header>    
+            <ul> 
+ <li>Puppet Labs</li> 
+ <li><a href="https://puppetlabs.com">https://puppetlabs.com</a></li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="25"><div>
+        <section>
+			<header>
+				<h2>Why Puppet?</h2>
+			</header>    
+            <ul> 
+ <li>More mature than competition</li> 
+ <li>Large community</li> 
+ <li>Ruby-based <abbr title="Domain Specific Langauge">DSL</abbr></li> 
+ <li>No need to learn Ruby ;)</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="26"><div>
+        <section>
+			<header>
+				<h2>Puppet example</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/030_PUPPET_CODE.png" alt="Puppet code" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="27"><div>
+        <section>
+			<header>
+				<h2>Puppet provisioning</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/20_PROVISIONING.png" alt="Provisioning 1" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="28"><div>
+        <section>
+			<header>
+				<h2>Puppet provisioning</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/21_PROVISIONING.png" alt="Provisioning 2" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="29"><div>
+        <section>
+			<header>
+				<h2>Puppet provisioning</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/22_PROVISIONING.png" alt="Provisioning 3" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="30"><div>
+        <section>
+			<header>
+				<h2>Puppet provisioning</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/23_PROVISIONING.png" alt="Provisioning 4" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="31"><div>
+        <section>
+			<header>
+				<h2>Puppet state management</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/24_STATE.png" alt="State 1" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="32"><div>
+        <section>
+			<header>
+				<h2>Puppet state management</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/25_STATE.png" alt="State 2" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="33"><div>
+        <section>
+			<header>
+				<h2>Puppet state management</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/26_STATE.png" alt="State 3" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="34"><div>
+        <section>
+			<header>
+				<h2>Puppet modules</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/27_MODULES.png" alt="Modules 1" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="35"><div>
+        <section>
+			<header>
+				<h2>Puppet modules</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/28_MODULES.png" alt="Modules 2" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="36"><div>
+        <section>
+			<header>
+				<h2>Puppet modules</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/29_MODULES.png" alt="Modules 3" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="37"><div>
+        <section>
+			<header>
+				<h2>Continuous Integration</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/CONTINOUS_INTEGRATION.png" alt="Service Partners" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="38"><div>
+        <section>
+			<header>
+				<h2>Why Jenkins?</h2>
+			</header>    
+            <ul> 
+ <li>De-facto standard</li> 
+ <li>Stable</li> 
+ <li>There is a plugin for that!</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="39"><div>
+        <section>
+			<header>
+				<h2>Services Partner</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/070_CLOUDBEES_PARTNERS.png" alt="Service Partners" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="40"><div>
+        <section>
+			<header>
+				<h2>Gradle Example I</h2>
+			</header>    
+            <pre>
+<code>task uploadModules &lt;&lt; {</code>
+<code>  remoteSession {</code>
+<code>    exec 'rm -rf /tmp/repo.zip'</code>
+<code>    scp {</code>
+<code>      from { localFile &quot;${buildDir}/repo.zip&quot; }</code>
+<code>      into { remoteDir &quot;/root&quot; }</code>
+<code>    }</code>
+<code>    ...</code>
+</pre>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="41"><div>
+        <section>
+			<header>
+				<h2>Gradle Example I</h2>
+			</header>    
+            <pre>
+<code>    ...</code>
+<code>    exec 'rm -rf /etc/puppet/modules'</code>
+<code>    exec 'unzip /tmp/repo.zip -d /etc/puppet/modules'</code>
+<code>  }</code>
+<code>}</code>
+</pre>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="42"><div>
+        <section>
+			<header>
+				<h2>Gradle Example II</h2>
+			</header>    
+            <pre>
+<code>task puppetApply(dependsOn: uploadModules) &lt;&lt; {</code>
+<code>  remoteSession {</code>
+<code>    scp {</code>
+<code>      from { localFile &quot;${buildDir}/setup.pp&quot; }</code>
+<code>      into { remoteDir &quot;/tmp&quot; }</code>
+<code>    }</code>
+<code>    exec 'puppet apply /tmp/setup.pp'</code>
+<code>  }</code>
+<code>}</code>
+</pre>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="43"><div>
+        <section>
+			<header>
+				<h2>Jenkins example</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/035_JENKINS_PUPPET_BUILD.png" alt="Puppet Build" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="44"><div>
+        <section>
+			<header>
+				<h2>In the meanwhile...</h2>
+			</header>    
+            <ul> 
+ <li>We started developing complex Puppet modules</li> 
+ <li>Modules needs proper testing</li> 
+ <li>...on different platforms</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="45"><div>
+        <section>
+			<header>
+				<h2>Do you test, right?</h2>
+			</header>    
+            <ul> 
+ <li>How to test this stuff?</li> 
+ <li>How to reuse a <strong>JUnit</strong> approach to testing?</li> 
+ <li>We wanted things to be SIMPLE!</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="46"><div>
+        <section>
+			<header>
+				<h2>PuppetUnit</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/LOGO_PUNIT.png" alt="PUnit logo" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="47"><div>
+        <section>
+			<header>
+				<h2>PUnit</h2>
+			</header>    
+            <ul> 
+ <li>Simple testing tool for verifying remote server state</li> 
+ <li>Uses <strong>sshoogr</strong> and <strong>JUnit</strong></li> 
+ <li>Reuse reporting features of <strong>JUnit</strong> and <strong>Jenkins</strong></li> 
+ <li>As simple as ...</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="48"><div>
+        <section>
+			<header>
+				<h2>PUnit Example I</h2>
+			</header>    
+            <pre>
+<code>class DerbyInstallTest </code>
+<code>    extends BasePuppetIntegrationTest {</code>
+<code>  @Before</code>
+<code>  void installDerby() {</code>
+<code>    apply(&quot;include derby&quot;)</code>
+<code>  }</code>
+<code>  ...</code>
+<code>}</code>
+</pre>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="49"><div>
+        <section>
+			<header>
+				<h2>PUnit Example II</h2>
+			</header>    
+            <pre>
+<code>@Test</code>
+<code>def void ensureDerbyRunning() {</code>
+<code>  command('service derby status &gt; derbystatus.log')</code>
+<code>  assertTrue fileText(&quot;/root/derbystatus.log&quot;)</code>
+<code>               .contains('Derby')</code>
+<code>  assertTrue fileText(&quot;/root/derbystatus.log&quot;)</code>
+<code>               .contains('is running.')</code>
+<code>}</code>
+</pre>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="50"><div>
+        <section>
+			<header>
+				<h2>PUnit Example III</h2>
+			</header>    
+            <pre>
+<code>@Test</code>
+<code>def void ensureCanConnect() {</code>
+<code>  Thread.sleep(10000)</code>
+<code>  uploadScript()</code>
+<code>  command('/opt/derby/db-derby-10.9.1.0-bin/bin/ij ' + </code>
+<code>          'testDataScript.sql &gt; derbytest.log')</code>
+<code>  ...</code>
+</pre>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="51"><div>
+        <section>
+			<header>
+				<h2>PUnit Example III</h2>
+			</header>    
+            <pre>
+<code>  ...</code>
+<code>  // Check if the log of the insert </code>
+<code>  // operation contains the word ERROR.</code>
+<code>  assertFalse(</code>
+<code>    &quot;The script should returne at least one error&quot;,</code>
+<code>    fileText(&quot;/root/derbytest.log&quot;)</code>
+<code>      .contains('ERROR')</code>
+<code>  )</code>
+<code>  ...</code>
+</pre>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="52"><div>
+        <section>
+			<header>
+				<h2>PUnit Example III</h2>
+			</header>    
+            <pre>
+<code>  ...</code>
+<code>  // Check on data that was inserted into a table.</code>
+<code>  assertTrue(</code>
+<code>    &quot;The log should contain a SELECT result&quot;,</code>
+<code>    fileText(&quot;/root/derbytest.log&quot;)</code>
+<code>     .contains('Grand Ave.')</code>
+<code>  )</code>
+<code>}</code>
+</pre>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="53"><div>
+        <section>
+			<header>
+				<h2>PUnit</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/035_JENKINS_PUPPET_BUILD.png" alt="Puppet Build" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide shout" id="54"><div>
+        <section>
+			<header>
+				<h2>Next problem?</h2>
+			</header>    
+            
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="55"><div>
+        <section>
+			<header>
+				<h2>Scalability</h2>
+			</header>    
+            <ul> 
+ <li>How do we test on different OS?</li> 
+ <li>How do we run parallel tests on multiple architectures?</li> 
+ <li>How do we avoid selling our houses?</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide shout" id="56"><div>
+        <section>
+			<header>
+				<h2>Amazon Web Services</h2>
+			</header>    
+            
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="57"><div>
+        <section>
+			<header>
+				<h2>Elastic Compute Cloud</h2>
+			</header>    
+            <ul> 
+ <li>Mature</li> 
+ <li>Great <abbr title="Application Programming Interface">API</abbr></li> 
+ <li>Virtual hardware variety</li> 
+ <li>OS variety</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="58"><div>
+        <section>
+			<header>
+				<h2>EC2 Console</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/060_EC2_Console.png" alt="EC2 Console" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="59"><div>
+        <section>
+			<header>
+				<h2>Gramazon</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/LOGO_GRAMAZON.png" alt="Gramazon Logo" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="60"><div>
+        <section>
+			<header>
+				<h2>Gramazon</h2>
+			</header>    
+            <ul> 
+ <li><abbr title="Groovy programming langauge">Groovy</abbr> based <abbr title="Application Programming Interface">API</abbr> for interacting with EC2</li> 
+ <li>Integrates with the rest of the stack</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="61"><div>
+        <section>
+			<header>
+				<h2>Gramazon Example I</h2>
+			</header>    
+            <pre>
+<code>task startInstance(type: StartInstance) {</code>
+<code>  keyName       'cloud-do'</code>
+<code>  securityGroup 'cloud-do'</code>
+<code>  instanceName  'gramazon/cloud-do'</code>
+<code>  stateFileName 'cloud-do.json'</code>
+<code>  ami           'ami-6f07e418'       </code>
+<code>  instanceType  't1.micro'</code>
+<code>  waitForStart  true</code>
+<code>}</code>
+</pre>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="62"><div>
+        <section>
+			<header>
+				<h2>Gramazon Example II</h2>
+			</header>    
+            <pre>
+<code>task terminateInstance(type: TerminateInstance) {</code>
+<code>  stateFileName 'cloud-do.json'</code>
+<code>}</code>
+</pre>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="63"><div>
+        <section>
+			<header>
+				<h2>Costs considerations</h2>
+			</header>    
+            <table> 
+ <tbody>
+  <tr>
+   <th>Name</th>
+   <th>Compute Units</th>
+   <th>Memory</th>
+   <th>Hourly Cost</th>
+  </tr> 
+  <tr>
+   <td>t1.micro</td>
+   <td>2</td>
+   <td>0.60 GB</td>
+   <td>$0.02</td>
+  </tr> 
+  <tr>
+   <td>m1.small</td>
+   <td>1</td>
+   <td>1.70 GB</td>
+   <td>$0.06</td>
+  </tr> 
+  <tr>
+   <td>c1.medium</td>
+   <td>5</td>
+   <td>1.70 GB</td>
+   <td>$0.14</td>
+  </tr> 
+  <tr>
+   <td>m1.medium</td>
+   <td>2</td>
+   <td>3.75 GB</td>
+   <td>$0.12</td>
+  </tr> 
+  <tr>
+   <td>m1.large</td>
+   <td>4</td>
+   <td>7.50 GB</td>
+   <td>$0.24</td>
+  </tr> 
+  <tr>
+   <td>c1.xlarge</td>
+   <td>20</td>
+   <td>7.00 GB</td>
+   <td>$0.58</td>
+  </tr> 
+  <tr>
+   <td>m3.xlarge</td>
+   <td>13</td>
+   <td>15.00 GB</td>
+   <td>$0.50</td>
+  </tr> 
+ </tbody>
+</table>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="64"><div>
+        <section>
+			<header>
+				<h2>Free tier</h2>
+			</header>    
+            <ul> 
+ <li>750 hours of Amazon EC2 Linux Micro Instance usage (613 MB of memory and 32-bit and 64-bit platform support)</li> 
+ <li>Enough hours to run continuously each month</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="65"><div>
+        <section>
+			<header>
+				<h2>Security considerations</h2>
+			</header>    
+            <ul> 
+ <li>Host operating system 
+  <ul> 
+   <li>Individual SSH keyed logins</li> 
+   <li>All accesses logged and audited</li> 
+   <li>Customer-generated keypairs</li> 
+  </ul></li> 
+ <li>Stateful firewall 
+  <ul> 
+   <li>Mandatory inbound firewall, default deny mode</li> 
+  </ul></li> 
+ <li>Signed <abbr title="Application Programming Interface">API</abbr> Calls 
+  <ul> 
+   <li>Require X.509 certificate or secret AWS key</li> 
+  </ul></li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="66"><div>
+        <section>
+			<header>
+				<h2>Imgr</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/LOGO_IMGR.png" alt="Gramazon Logo" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="67"><div>
+        <section>
+			<header>
+				<h2>Imgr</h2>
+			</header>    
+            <ul> 
+ <li>A tool for building images</li> 
+ <li>Inspired by Packer</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="68"><div>
+        <section>
+			<header>
+				<h2>Images?</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/060_AMIs.png" alt="Images" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="69"><div>
+        <section>
+			<header>
+				<h2>Supports</h2>
+			</header>    
+            <ul> 
+ <li>Shell</li> 
+ <li>Puppet</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="70"><div>
+        <section>
+			<header>
+				<h2>Configuration Example</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/080_IMGR_EXAMPLE.png" alt="Imgr" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="71"><div>
+        <section>
+			<header>
+				<h2>The big picture</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/AETOMATION_BIG_PICTURE.png" alt="Images" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="72"><div>
+        <section>
+			<header>
+				<h2>Aetomation</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/AETOMATION_PRODUCTS.png" alt="Images" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="73"><div>
+        <section>
+			<header>
+				<h2>Conclusions</h2>
+			</header>    
+            <ul> 
+ <li>Reuse your existing <abbr title="Java programming langauge">Java</abbr> knowledge</li> 
+ <li>...to build a bridge between DEVs and OPs</li> 
+ <li>Reuse development best practices for OPs</li> 
+ <li>Don't be afraid to try new technologies</li> 
+ <li>Automate!</li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide shout" id="74"><div>
+        <section>
+			<header>
+				<h2>Reading material</h2>
+			</header>    
+            
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="75"><div>
+        <section>
+			<header>
+				<h2>Groovy 2 Cookbook</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/BOOK_FRONT_COVER.png" alt="&lt;abbr title=&quot;Groovy programming langauge&quot;&gt;Groovy&lt;/abbr&gt; book" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="76"><div>
+        <section>
+			<header>
+				<h2>The Phoenix Project</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/BOOK_PHOENIX_PROJECT.jpg" alt="Phoenix Project" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="77"><div>
+        <section>
+			<header>
+				<h2>Continuous Delivery</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/BOOK_CONTINUOUS_DELIVERY.jpg" alt="Cd" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="78"><div>
+        <section>
+			<header>
+				<h2>Programming Amazon EC2</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/BOOK_AMAZON_EC2.png" alt="ec2" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="79"><div>
+        <section>
+			<header>
+				<h2>Gradle in Action</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/BOOK_GRADLE_IN_ACTION.jpg" alt="gradle" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="80"><div>
+        <section>
+			<header>
+				<h2>Technologies to follow</h2>
+			</header>    
+            <ul> 
+ <li>Vagrant - <a href="http://www.vagrantup.com/">http://www.vagrantup.com/</a></li> 
+ <li>Docker - <a href="https://www.docker.io/">https://www.docker.io/</a></li> 
+ <li>Packer - <a href="http://www.packer.io/">http://www.packer.io/</a></li> 
+ <li>Qemu - <a href="http://wiki.qemu.org/Main_Page">http://wiki.qemu.org/Main_Page</a></li> 
+ <li>jclouds - <a href="http://jclouds.apache.org/">http://jclouds.apache.org/</a></li> 
+ <li>Cloudbees - <a href="http://www.cloudbees.com/">http://www.cloudbees.com/</a></li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide shout" id="81"><div>
+        <section>
+			<header>
+				<h2>One more thing...</h2>
+			</header>    
+            
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide shout" id="82"><div>
+        <section>
+			<header>
+				<h2>It's all Open Source!</h2>
+			</header>    
+            
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="83"><div>
+        <section>
+			<header>
+				<h2>Source code</h2>
+			</header>    
+            <ul> 
+ <li>Sshoogr: <a href="https://github.com/aestasit/sshoogr">https://github.com/aestasit/sshoogr</a></li> 
+ <li>Sshoogr <abbr title="Gradle build tool">Gradle</abbr>: <a href="https://github.com/aestasit/sshoogr-gradle">https://github.com/aestasit/sshoogr-gradle</a></li> 
+ <li>PUnit: <a href="https://github.com/aestasit/puppet-unit">https://github.com/aestasit/puppet-unit</a></li> 
+ <li>Gramazon: <a href="https://github.com/aestasit/gramazon">https://github.com/aestasit/gramazon</a></li> 
+ <li>Imgr: <a href="https://github.com/aestasit/imgr">https://github.com/aestasit/imgr</a></li> 
+</ul>
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide shout" id="84"><div>
+        <section>
+			<header>
+				<h2>Seeking contributors!</h2>
+			</header>    
+            
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide shout" id="85"><div>
+        <section>
+			<header>
+				<h2>Questions?</h2>
+			</header>    
+            
+		</section>
+	</div></div>
+    
+    
+       
+    <div class="slide" id="86"><div>
+        <section>
+			<header>
+				<h2>Paldies! Thank you!</h2>
+			</header>    
+            
+<figure> 
+ <img src="images/99_QUESTIONS.png" alt="DevOps" /> 
+</figure>
+
+		</section>
+	</div></div>
+    
+		
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="scripts/script.js"></script>
+	<!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+	<!-- Photos by John Carey — fiftyfootshadows.net -->
+</body>
+</html>
