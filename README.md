@@ -4,3 +4,4 @@ Slide deck of presentation "**Groovy DevOps in the Cloud**" given at **Java Day 
 
 Just clone the repository and open `slides.html` in your browser.
 
+Some real example can also be found here: <https://github.com/aestasit/talks2013-javaday-groovy-devops-setup>.
